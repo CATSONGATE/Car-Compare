@@ -4,9 +4,27 @@ import { fetchCarQuery } from '@lib/carquery';
 export async function GET() {
     try {
         const data = await fetchCarQuery('getYears', {});
-        const years = Object.values(data.Years).flat().map(Number);
+
+        const yearsRaw = data?.Years;
+        if (!yearsRaw) { 
+          return NextResponse.json(
+            { error: 'Invalid years response' },
+            { status: 502 }
+          );
+        }
+            
+        // CarQuery returns { min_year, max_year }
+        const years: number[] = [];
+        for (let y = Number(yearsRaw.min_year); y <= Number(yearsRaw.max_year); y++) {
+            years.push(y);
+        }
+        
+        
         return Next Response.json({ years });
-    } catch {
-        return Next ReportingObserver.json({ error: 'Failed to load years' }, { status:502 });
+    } catch (err) {
+        return NextResponse.json(
+            { error: 'Failed to fetch years' },
+            { status: 502 }
+        );
     }
 }
