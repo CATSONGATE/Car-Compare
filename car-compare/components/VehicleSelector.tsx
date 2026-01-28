@@ -118,7 +118,7 @@ export default function VehicleSelector() {
     fetchTrims(make, model, year)
       .then((res) => setTrims(res.trims))
       .finally(() => setLoading(false));
-  ), [model]);
+  }, [model]);
 
   /* =========================
      Trim → Vehicle Details

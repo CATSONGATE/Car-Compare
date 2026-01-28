@@ -1,6 +1,7 @@
 'use client';
 
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import * as React from 'react';
 
 const theme = createTheme({
     palette: {
@@ -15,6 +16,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             <CssBaseline />
             {children}
         </ThemeProvider>
-    ):
+    );
 }
     

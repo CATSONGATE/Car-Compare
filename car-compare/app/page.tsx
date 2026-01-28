@@ -1,8 +1,8 @@
 'use client';
 
 import { Container, Grid } from '@mui/material';
-import VehicleSelector from '@/componants/VehicleSelector';
-import CompareTable from '@/componants/CompareTable';
+import VehicleSelector from '@/components/VehicleSelector';
+import CompareTable from '@/components/CompareTable';
 
 export default function Page() {
   return (
@@ -11,7 +11,7 @@ export default function Page() {
         <Grid item xs={12} md={5}>
           <VehicleSelector />
         </Grid>
-        <Grid> item xs={12} md={7}>
+        <Grid item xs={12} md={7}>
           <CompareTable />
         </Grid>
       </Grid>
