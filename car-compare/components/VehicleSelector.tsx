@@ -78,7 +78,7 @@ export default function VehicleSelector() {
     fetchMakes(year)
       .then((res) => setMakes(res.makes))
       .finally(() => setLoading(false));
-  }, {year});
+  }, [year]);
 
     /* =========================
      Make → Models
@@ -134,7 +134,7 @@ export default function VehicleSelector() {
     fetchVehicleDetails(trim)
       .then((res) => setVehicle(res.vehicle))
       .finally(() => setLoading(false));
-  }, {trim});
+  }, [trim]);
 
    /* =========================
      Reset
