@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { fetchCarQuery } from '@lib/carquery';
+import { fetchCarQuery } from '@/lib/carquery';
 
 export async function GET() {
     try {
@@ -20,7 +20,7 @@ export async function GET() {
         }
         
         
-        return Next Response.json({ years });
+        return NextResponse.json({ years });
     } catch (err) {
         return NextResponse.json(
             { error: 'Failed to fetch years' },

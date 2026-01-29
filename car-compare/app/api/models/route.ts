@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { fetchCarQuery } from '@lib/carquery';
+import { fetchCarQuery } from '@/lib/carquery';
 
 export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
