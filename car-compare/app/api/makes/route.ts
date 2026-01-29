@@ -23,9 +23,9 @@ export async function GET(req: Request) {
         );
       }
 
-      const makes - makesRaw.map((m: any) => ({
+      const makes = makesRaw.map((m: any) => ({
         make_id: String(m.make_slug || m.make_id).trim(),
-        make_display: String(m.make_display.trim(),)
+        make_display: String(m.make_display.trim())
       }));
 
       return NextResponse.json({ makes });
