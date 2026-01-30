@@ -7,7 +7,7 @@ export interface Make {
 }
 
 export interface Model {
-    model_name: string:
+    model_name: string;
 }
 
 export interface Trim {

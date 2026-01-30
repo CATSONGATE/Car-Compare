@@ -7,6 +7,7 @@ export async function GET() {
 
         const yearsRaw = data?.Years;
         if (!yearsRaw) { 
+          console.error('[api/years] Invalid years response from CarQuery:', data);
           return NextResponse.json(
             { error: 'Invalid years response' },
             { status: 502 }
@@ -22,6 +23,7 @@ export async function GET() {
         
         return NextResponse.json({ years });
     } catch (err) {
+        console.error('[api/years] Failed to fetch years:', err);
         return NextResponse.json(
             { error: 'Failed to fetch years' },
             { status: 502 }

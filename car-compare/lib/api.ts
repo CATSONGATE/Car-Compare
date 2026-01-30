@@ -15,14 +15,14 @@ export function fetchMakes(year: number) {
 }
 
 export function fetchModels(make: string, year: number) {
-    return apiGet<{ models: { model_name: string }[] }>(
-        `/api/makes?year=${encodeURIComponent(make)}&year=${encodeURIComponent(String(year))}`
-    );
+  return apiGet<{ models: { model_name: string }[] }>(
+    `/api/models?make=${encodeURIComponent(make)}&year=${encodeURIComponent(String(year))}`
+  );
 }
 
 export function fetchTrims(make: string, model: string, year: number) {
     return apiGet<{ trims: { model_id: string; model_trims: string; model_year: string }[] }>(
-        `/api/trims?make=$(encodeURIComponent(make)}&model=${encodeURIComponent(model)}&year=${encodeURIComponent(String(year))}`
+        `/api/trims?make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}&year=${encodeURIComponent(String(year))}`
     );
 }
 

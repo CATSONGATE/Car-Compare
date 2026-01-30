@@ -7,7 +7,7 @@ export async function GET(req: Request) {
 
     if (!model_id) {
         return NextResponse.json(
-            { error: 'Missing required param: model_id' }
+            { error: 'Missing required param: model_id' },
             { status: 400 }
         );
     }

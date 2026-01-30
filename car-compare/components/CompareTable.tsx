@@ -5,7 +5,7 @@ import {
   Table,
   TableBody,
   TableCell,
-  Tablehead,
+  TableHead,
   TableRow,
   Typography,
   IconButton,
@@ -23,7 +23,7 @@ const FIELDS: { label: string; key: keyof VehicleDetails }[] = [
   { label: 'Trim', key: 'model_trim' },
   { label: 'Engine', key: 'model_engine_type' },
   { label: 'Power (PS)', key: 'model_engine_power_ps' },
-  { label: 'Torqe (Nm)', key: 'model_engine_torque_nm' },
+  { label: 'Torque (Nm)', key: 'model_engine_torque_nm' },
 ];
 
 export default function CompareTable() {
